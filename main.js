@@ -20,6 +20,19 @@ client.on('message', message =>{
   if(command == 'help'){
       message.channel.send("Sorry bud, but I can't help you");
   }
+
+  if(command == 'commands'){
+    message.channel.send("Commands: $help, $hello, $iqbal");
+  }
+  
+  if(command == 'hello'){
+    message.channel.send("Hi! Nice to meet you bud :)");
+  }
+
+  if(command == 'iqbal'){
+    message.channel.send("Sexiest guy in the world!");
+  }
+
 });
 
 const TOKEN = process.env.TOKEN;
