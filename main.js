@@ -18,21 +18,18 @@ client.on('message', message =>{
   const command = args.shift().toLowerCase();
 
   if(command == 'help'){
-      message.channel.send("Sorry bud, but I can't help you");
-  }
+      message.channel.send("Sorry bud, but I can't help you. Hint: '$commands'");
 
-  if(command == 'commands'){
+  } else if(command == 'commands'){
     message.channel.send("Commands: $help, $hello, $iqbal");
+
+  } else if(command == 'hello'){
+    message.channel.send("Hi! Nice to meet you bud :)");
+
+  } else if(command == 'iqbal'){
+    message.channel.send("Iqbot");
   }
   
-  if(command == 'hello'){
-    message.channel.send("Hi! Nice to meet you bud :)");
-  }
-
-  if(command == 'iqbal'){
-    message.channel.send("Sexiest guy in the world!");
-  }
-
 });
 
 const TOKEN = process.env.TOKEN;
