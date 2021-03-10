@@ -20,11 +20,18 @@ client.on('message', message =>{
 
 	if(command == 'help') {
 		message.channel.send('Sorry bud, but I can\'t help you. Hint: \'$commands\'');
-
 	}
 	else if(command == 'commands') {
-		message.channel.send('Commands: $help, $hello, $iqbal');
-
+		// eslint-disable-next-line no-unused-vars
+		const commands_embed = new Discord.MessageEmbed()
+			.setColor('AQUA')
+			.setTitle('Bot Iq Basic Commands')
+			.setTimestamp()
+			.addFields(
+				{ name: '$help, $hello, $iqbal, $commands', value: 'More commands coming soon...' },
+			);
+		// eslint-disable-next-line no-undef
+		message.channel.send(commands_embed);
 	}
 	else if(command == 'hello') {
 		message.channel.send('Hi! Nice to meet you bud :)');
