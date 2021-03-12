@@ -39,6 +39,12 @@ client.on('message', message =>{
 	}
 	else if(command == 'iqbal') {
 		message.channel.send('Iqbot');
+
+	}
+	else if(command == 'members') {
+		const { guild } = message;
+
+		message.channel.send(`${guild.name} has a total of ${guild.memberCount} members`);
 	}
 
 });
