@@ -28,7 +28,7 @@ client.on('message', message =>{
 			.setTitle('Bot Iq Basic Commands')
 			.setTimestamp()
 			.addFields(
-				{ name: '$help, $hello, $iqbal, $commands', value: 'More commands coming soon...' },
+				{ name: '$help, $hello, $iqbal, $commands, $serverinfo', value: 'More commands coming soon...' },
 			);
 		// eslint-disable-next-line no-undef
 		message.channel.send(commands_embed);
