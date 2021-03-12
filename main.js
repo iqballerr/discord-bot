@@ -41,10 +41,35 @@ client.on('message', message =>{
 		message.channel.send('Iqbot');
 
 	}
-	else if(command == 'members') {
+	else if(command == 'serverinfo') {
 		const { guild } = message;
 
-		message.channel.send(`${guild.name} has a total of ${guild.memberCount} members`);
+		const { name, region, memberCount, owner, afkTimeout } = guild;
+		const icon = guild.iconURL();
+
+		const embed = new Discord.MessageEmbed()
+			.setTitle(`Server info for "${name}"`)
+			.setThumbnail(icon)
+			.addFields(
+				{
+					name: 'Region',
+					value: region,
+				},
+				{
+					name: 'Members',
+					value: memberCount,
+				},
+				{
+					name: 'Owner',
+					value: owner.user.tag,
+				},
+				{
+					name: 'AFKTimeout',
+					value: afkTimeout / 60,
+				},
+			);
+
+		message.channel.send(embed);
 	}
 
 });
